@@ -10,11 +10,11 @@ return (
 <div className='container header__container'>
 <h5>Hello I'm</h5>
 <h1>DJITUE TOGUE</h1>
-<h5 className='text-light'>Software Engineer </h5>
+<h5 className='text-light'>Computer Engineer </h5>
 <CTA/>
 <HeaderSocial/>
 <div className='my_image'>
-<img src={me} alt='my'/>
+<img src={me} alt='me'/>
 </div>
 <a href='#contact' className='scroll__down'>Scroll down</a>
 </div>
