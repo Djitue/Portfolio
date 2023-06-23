@@ -1,4 +1,7 @@
 import React from 'react'
+import emailjs from '@emailjs/browser'
+
+
 import './contact.css'
 import {MdOutlineEmail} from 'react-icons/md'
 import {AiOutlineLinkedin} from 'react-icons/ai'
@@ -8,12 +11,10 @@ const Contact = () => {
 const form = useRef();
 const sendEmail = (e) => {
 e.preventDefault();
+
+
+emailjs.sendForm('service_njzi8yw', 'template_vmbtbgd', form.current, 'Hpfp8zBsEUjLo3Vly')
 e.target.reset()
-.then((result) => {
-console.log(result.text)
-},(error) =>{
-console.log(error.text);
-});
 };
 return (
 <section id="contact">
@@ -24,7 +25,7 @@ return (
 <article className='contact__option'>
 <MdOutlineEmail className='contact__option__icon'/>
 <h4>Email</h4>
-<h5>myEmail@gmail.com</h5>
+<h5>brindadjitue@gmail.com</h5>
 <a href='mailto:brindadjitue@gmail.com'>send a
 message</a>
 </article>
@@ -38,14 +39,14 @@ message</a>
 <BsWhatsapp className='contact__option__icon'/>
 <h4>Whatsapp</h4>
 <h5>Direct message</h5>
-<a href='https://web.whatsapp.com/send?phone=+237697761835'>Whatsapp me</a>
+<a href='https://wa.me/+237697761835'>Whatsapp me</a>
 </article>
 </div>
 <form ref={form} onSubmit={sendEmail}>
-<input type="text" name='name' placeholder='full name' required/>
-<input type="email" name='email' placeholder='your email' required/>
+<input type="text" name='name' placeholder='name' required/>
+<input type="email" name='email' placeholder='email' required/>
 <textarea name="message" id="message" cols="30" rows="10"
-placeholder='your message' required></textarea>
+placeholder='message' required></textarea>
 <button type="submit" className='btn btn-primary'>send message</button>
 </form>
 </div>
